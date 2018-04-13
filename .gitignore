@@ -1,0 +1,13 @@
+*.log*
+.cache
+.DS_Store
+.idea
+.vscode
+packages/**/lib
+lib/
+node_modules
+example/dist
+/docs/dist
+test/coverage
+packages/klg-css/build
+packages/klg-css/icons
