@@ -23,7 +23,7 @@
 import _ from 'lodash'
 
 export default {
-  name: 'klg-select',
+  name: 'KlgSelect',
   props: {
     defaultValue: {
       type: String,

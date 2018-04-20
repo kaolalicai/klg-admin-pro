@@ -5,6 +5,7 @@
   "unpkg": "lib/index.js",
   "files": [
     "lib",
+    "es",
     "packages",
     "types"
   ],

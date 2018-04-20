@@ -15,7 +15,7 @@
 import _ from 'lodash'
 
 export default {
-  name: 'klg-pagination',
+  name: 'KlgPagination',
   props: {
     small: {
       type: Boolean,
