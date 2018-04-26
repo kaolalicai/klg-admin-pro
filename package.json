@@ -1,5 +1,5 @@
 {
-  "name": "klg-admin-pro",
+  "name": "klg-pro",
   "version": "1.0.0",
   "description": "管理后台通用组件库",
   "unpkg": "lib/index.js",

@@ -20,8 +20,8 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
-        { from: /^\/zanui\/vant\/examples/, to: '/examples.html' },
-        { from: /^\/zanui\/vant/, to: '/index.html' }
+        { from: /^\/examples/, to: '/examples.html' },
+        { from: /^\//, to: '/index.html' }
       ]
     },
     stats: 'errors-only'

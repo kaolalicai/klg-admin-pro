@@ -23,7 +23,7 @@ const components = [
 
 const install = Vue => {
   components.forEach(Component => {
-    Vue.use(Component)
+    Vue.component(Component.name, Component)
   })
 }
 
@@ -84,9 +84,8 @@ export default {
 
 function buildDocsEntry() {
   const dir = path.join(__dirname, '../../docs/markdown')
-  const cnDocs = fs.readdirSync(path.join(dir, 'zh-CN')).map(name => 'zh-CN/' + name)
-  const enDocs = fs.readdirSync(path.join(dir, 'en-US')).map(name => 'en-US/' + name)
-  const docs = [...cnDocs, ...enDocs]
+  const cnDocs = fs.readdirSync(dir)
+  const docs = [...cnDocs]
     .filter(name => name.indexOf('.md') !== -1)
     .map(name => name.replace('.md', ''))
     .map(name => `'${name}': wrapper(r => require.ensure([], () => r(require('./${name}.md')), '${name}'))`)
@@ -113,5 +112,5 @@ export default {
 }
 
 buildPackageEntry()
-// buildDemoEntry()
-// buildDocsEntry()
+buildDemoEntry()
+buildDocsEntry()

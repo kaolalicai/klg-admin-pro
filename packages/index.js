@@ -1,16 +1,16 @@
 // This file is auto gererated by build/bin/build-entry.js
 import Pagination from './pagination'
-import Select from './select'
+import SelectFilter from './select-filter'
 
 const version = '1.0.0'
 const components = [
   Pagination,
-  Select
+  SelectFilter
 ]
 
 const install = Vue => {
   components.forEach(Component => {
-    Vue.use(Component)
+    Vue.component(Component.name, Component)
   })
 }
 
@@ -22,7 +22,7 @@ export {
   install,
   version,
   Pagination,
-  Select
+  SelectFilter
 }
 
 export default {

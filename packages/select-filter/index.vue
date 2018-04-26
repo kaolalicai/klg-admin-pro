@@ -23,7 +23,7 @@
 import _ from 'lodash'
 
 export default {
-  name: 'KlgSelect',
+  name: 'KlgSelectFilter',
   props: {
     defaultValue: {
       type: String,
@@ -111,7 +111,7 @@ export default {
           }
         }
       })
-      this.$emit('onChange')
+      this.$emit('change', value)
     }
   }
 }
