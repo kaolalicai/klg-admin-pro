@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block title="基础单选">
-      <klg-select-filter
+      <klg-router-select
         filter-key="status"
         placeholder="按订单状态筛选"
         :options="ORDER_STATUS_OPTIONS"
@@ -9,7 +9,7 @@
       />
     </demo-block>
     <demo-block title="基础多选">
-      <klg-select-filter
+      <klg-router-select
         filter-key="role"
         placeholder="按用户角色筛选"
         :options="USER_ROLES_OPTIONS"

@@ -1,6 +1,6 @@
-## SelectFilter 过滤筛选
+## RouterSelect 过滤筛选
 
-SelectFilter是基于 [Select](http://element-cn.eleme.io/#/zh-CN/component/select) 选择器组件衍生出来的高阶组件，主要是解决一些通用的过滤查询、同步路由（Vue Router）场景。
+RouterSelect是基于 [Select](http://element-cn.eleme.io/#/zh-CN/component/select) 选择器组件衍生出来的高阶组件，主要是解决一些通用的过滤查询、同步路由（Vue Router）场景。
 
 ### 代码演示
 
@@ -9,7 +9,7 @@ SelectFilter是基于 [Select](http://element-cn.eleme.io/#/zh-CN/component/sele
 组件会根据选中项来同步页面路由，譬如选中进行中选项时，路由会更新为`?status=pending`
 
 ```html
-<klg-select-filter
+<klg-router-select
   filter-key="status"
   placeholder="按订单状态筛选"
   :options="ORDER_STATUS_OPTIONS"
@@ -41,7 +41,7 @@ export default {
 只需要设置 `multiple` 即可开启多选模式，此模式下，路由会更新为 `?role=INVESTOR&role=BORROWSER`
 
 ```html
-<klg-select-filter
+<klg-router-select
   filter-key="role"
   placeholder="按用户角色筛选"
   :options="USER_ROLES_OPTIONS"
@@ -63,7 +63,7 @@ export default {
 }
 ```
 
-### SelectFilter API
+### RouterSelect API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
@@ -78,7 +78,7 @@ export default {
 | options | 选项键值数据[{label:'x',value:'x'}] | `Array` | - | - |
 | popperClass | Select 下拉框的类名 | `String` | - | - |
 
-### SelectFilter Event
+### RouterSelect Event
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

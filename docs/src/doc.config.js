@@ -43,8 +43,12 @@ module.exports = {
           groupName: '业务组件',
           list: [
             {
-              path: '/select-filter',
-              title: 'SelectFilter - 过滤选择'
+              path: '/router-select',
+              title: 'RouterSelect - 过滤选择'
+            },
+            {
+              path: '/router-pagination',
+              title: 'RouterPagination - 分页器'
             }
           ]
         }

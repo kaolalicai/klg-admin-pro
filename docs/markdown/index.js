@@ -15,5 +15,6 @@ function wrapper(component) {
 export default {
   'intro': wrapper(r => require.ensure([], () => r(require('./intro.md')), 'intro')),
   'quickstart': wrapper(r => require.ensure([], () => r(require('./quickstart.md')), 'quickstart')),
-  'select-filter': wrapper(r => require.ensure([], () => r(require('./select-filter.md')), 'select-filter'))
+  'router-pagination': wrapper(r => require.ensure([], () => r(require('./router-pagination.md')), 'router-pagination')),
+  'router-select': wrapper(r => require.ensure([], () => r(require('./router-select.md')), 'router-select'))
 }

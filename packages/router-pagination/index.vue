@@ -15,7 +15,7 @@
 import _ from 'lodash'
 
 export default {
-  name: 'KlgPagination',
+  name: 'KlgRouterPagination',
   props: {
     small: {
       type: Boolean,
@@ -56,6 +56,12 @@ export default {
     }
   },
   methods: {
+    emitChange() {
+      this.$emit('change', {
+        currentPage: this.finalCurrentPage,
+        pageSize: this.finalPageSize
+      })
+    },
     handleSizeChange (size) {
       this.$router.push({
         path: this.$route.path,
@@ -64,7 +70,7 @@ export default {
           ...{limit: size}
         }
       })
-      this.$emit('onChange')
+      this.emitChange()
     },
     handleCurrentChange (currentPage) {
       this.$router.push({
@@ -74,7 +80,7 @@ export default {
           ...{page: currentPage}
         }
       })
-      this.$emit('onChange')
+      this.emitChange()
     }
   }
 }

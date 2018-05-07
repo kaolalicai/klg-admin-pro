@@ -21,5 +21,6 @@ function componentWrapper(component, name) {
 }
 
 export default {
-  'select-filter': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/select-filter'), 'select-filter')), 'select-filter'))
+  'router-pagination': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/router-pagination'), 'router-pagination')), 'router-pagination')),
+  'router-select': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/router-select'), 'router-select')), 'router-select'))
 }

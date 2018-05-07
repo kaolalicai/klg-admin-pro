@@ -1,11 +1,11 @@
 // This file is auto gererated by build/bin/build-entry.js
-import Pagination from './pagination'
-import SelectFilter from './select-filter'
+import RouterPagination from './router-pagination'
+import RouterSelect from './router-select'
 
 const version = '1.0.0'
 const components = [
-  Pagination,
-  SelectFilter
+  RouterPagination,
+  RouterSelect
 ]
 
 const install = Vue => {
@@ -21,8 +21,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-  Pagination,
-  SelectFilter
+  RouterPagination,
+  RouterSelect
 }
 
 export default {
