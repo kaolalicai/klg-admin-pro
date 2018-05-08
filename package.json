@@ -2,7 +2,9 @@
   "name": "klg-admin-pro",
   "version": "1.0.0",
   "description": "管理后台通用组件库",
-  "unpkg": "lib/index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "style": "lib/klg-css/index.css",
   "files": [
     "lib",
     "es",
