@@ -1,14 +1,17 @@
 <template>
-  <div class="klg-pagination-wrapper">
-    <el-pagination
-      :current-page="finalCurrentPage"
-      :page-size="finalPageSize"
-      :page-sizes="finalPageSizes"
-      :layout="layout"
-      :total="total"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"/>
-  </div>
+  <el-pagination
+    :small="small"
+    :disabled="disabled"
+    :background="background"
+    :current-page="finalCurrentPage"
+    :page-size="finalPageSize"
+    :page-sizes="finalPageSizes"
+    :pager-count="pagerCount"
+    :popper-class="popperClass"
+    :layout="layout"
+    :total="total"
+    @size-change="handleSizeChange"
+    @current-change="handleCurrentChange"/>
 </template>
 
 <script>
@@ -21,9 +24,17 @@ export default {
       type: Boolean,
       default: false
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    background: {
+      type: Boolean,
+      default: false
+    },
     total: {
       type: Number,
-      default: 0
+      default: undefined
     },
     currentPage: {
       type: Number,
@@ -36,6 +47,14 @@ export default {
     pageSizes: {
       type: Array,
       default: () => [10, 20, 30, 40, 50, 60, 100]
+    },
+    pagerCount: {
+      type: Number,
+      default: 7
+    },
+    popperClass: {
+      type: String,
+      default: undefined
     },
     layout: {
       type: String,
@@ -56,7 +75,7 @@ export default {
     }
   },
   methods: {
-    emitChange() {
+    emitChange () {
       this.$emit('change', {
         currentPage: this.finalCurrentPage,
         pageSize: this.finalPageSize

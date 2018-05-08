@@ -1,4 +1,4 @@
-## RouterSelect 过滤筛选
+## RouterSelect 选择器
 
 RouterSelect是基于 [Select](http://element-cn.eleme.io/#/zh-CN/component/select) 选择器组件衍生出来的高阶组件，主要是解决一些通用的过滤查询、同步路由（Vue Router）场景。
 

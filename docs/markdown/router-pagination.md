@@ -4,82 +4,77 @@ RouterPagination是基于 [Pagination](http://element-cn.eleme.io/#/zh-CN/compon
 
 ### 代码演示
 
-#### 基础单选
+#### 基础用法
 
-组件会根据选中项来同步页面路由，譬如选中进行中选项时，路由会更新为`?status=pending`
+组件会根据选中页码来同步页面路由，譬如选中第二页时，路由会更新为`?page=2`
 
 ```html
-<klg-select-filter
-  filter-key="status"
-  placeholder="按订单状态筛选"
-  :options="ORDER_STATUS_OPTIONS"
+<klg-router-pagination
+  :total="20"
+  layout="prev, pager, next"
   @change="handleChange"
 />
 ```
 
 ```javascript
 export default {
-  data() {
-    return {
-      ORDER_STATUS_OPTIONS: [
-        {label: '进行中', value: 'pending'},
-        {label: '完成', value: 'done'},
-        {label: '失败', value: 'fail'}
-      ]
-    }
-  },
   methods: {
-    handleChange(value) {
+    handleChange({currentPage, pageSize}) {
       // 通常这时可以根据更新后的路由信息去获取后端数据
-      this.$message(`当前选中：${value}`)
+      this.$message(`当前选中第${currentPage}页，每页${pageSize}条`)
     }
   }
 }
 ```
 
-#### 基础多选
-只需要设置 `multiple` 即可开启多选模式，此模式下，路由会更新为 `?role=INVESTOR&role=BORROWSER`
+#### 显示总数和调整条数
+只需要设置 `layout` 即可调整显示内容，譬如选中第二页每页显示十条时，路由会更新为 `?page=2&limit=10`
 
 ```html
-<klg-select-filter
-  filter-key="role"
-  placeholder="按用户角色筛选"
-  :options="USER_ROLES_OPTIONS"
-  :multiple="true"
+<klg-router-pagination
+  :total="20"
+  layout="total, sizes, prev, pager, next"
+  @change="handleChange"
 />
 ```
 
-```javascript
-export default {
-  data() {
-    return {
-      USER_ROLES_OPTIONS: [
-        {label: '投资人', value: 'INVESTOR'},
-        {label: '借款人', value: 'BORROWSER'},
-        {label: '合作机构', value: 'COLLABORATOR'}
-      ]
-    }
-  }
-}
+#### 小型分页
+
+```html
+<klg-router-pagination
+  :total="20"
+  :small="true"
+  layout="prev, pager, next"
+  @change="handleChange"
+/>
+```
+
+#### 完整功能
+
+```html
+<klg-router-pagination
+  :total="20"
+  @change="handleChange"
+/>
 ```
 
 ### Pagination API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| defaultValue | 默认值 | `String` | - | - |
-| filterKey | 需要更新的路由查询键名 | `String` | - | - |
-| size | 选择框尺寸 | `String` | `medium` | `medium/small/mini` |
-| placeholder | 占位符 | `String` | `请选择` | - |
-| multiple | 是否多选 | `Boolean` | `false` | - |
-| clearable | 单选时是否可以清空选项 | `Boolean` | `true` | - |
-| filterable | 是否可搜索 | `Boolean` | `false` | - |
-| loading | 是否正在从远程获取数据 | `Boolean` | `false` | - |
-| options | 选项键值数据[{label:'x',value:'x'}] | `Array` | - | - |
-| popperClass | Select 下拉框的类名 | `String` | - | - |
+| small | 是否使用小型分页样式 | `Boolean` | `false` | - |
+| total | 总条目数 | `Number` | - | - |
+| current-page | 当前页数 | `Number` | `1` | - |
+| page-size | 每页显示条目个数 | `Number` | `10` | - |
+| page-sizes | 每页显示个数选择器的选项设置 | `Number[]` | `[10, 20, 30, 40, 50, 60, 100]` | - |
+| layout | 组件布局，子组件名用逗号分隔 | `String` | `total, sizes, prev, pager, next, jumper` | - |
+| disabled | 是否禁用 | `Boolean` | `false` | - |
+| background | 是否为分页按钮添加背景色 | `Boolean` | `false` | - |
+| pager-count | 页码按钮的数量，当总页数超过该值时会折叠 | `Number` | `7` | - |
+| popper-class | 每页显示个数选择器的下拉框类名 | `String` | - | - |
 
 ### Pagination Event
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| change | 选中值发生变化时触发 | 目前的选中值 |
+| change | 选中值发生变化时触发 | 当前页和每页条数 |

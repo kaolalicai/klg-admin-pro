@@ -44,7 +44,7 @@ module.exports = {
           list: [
             {
               path: '/router-select',
-              title: 'RouterSelect - 过滤选择'
+              title: 'RouterSelect - 选择器'
             },
             {
               path: '/router-pagination',

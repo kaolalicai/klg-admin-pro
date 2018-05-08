@@ -13,6 +13,7 @@ function wrapper(component) {
 }
 
 export default {
+  'changelog': wrapper(r => require.ensure([], () => r(require('./changelog.md')), 'changelog')),
   'intro': wrapper(r => require.ensure([], () => r(require('./intro.md')), 'intro')),
   'quickstart': wrapper(r => require.ensure([], () => r(require('./quickstart.md')), 'quickstart')),
   'router-pagination': wrapper(r => require.ensure([], () => r(require('./router-pagination.md')), 'router-pagination')),

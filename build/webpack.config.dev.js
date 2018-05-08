@@ -8,8 +8,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   mode: 'development',
   entry: {
-    'vant-docs': './docs/src/index.js',
-    'vant-mobile': './docs/src/mobile.js'
+    'klg-docs': './docs/src/index.js',
+    'klg-mobile': './docs/src/mobile.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -77,13 +77,13 @@ module.exports = {
   plugins: [
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vant-docs'],
+      chunks: ['vendor', 'klg-docs'],
       template: 'docs/src/index.tpl',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vant-mobile'],
+      chunks: ['vendor', 'klg-mobile'],
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true
