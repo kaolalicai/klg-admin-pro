@@ -2,7 +2,7 @@
 import RouterPagination from './router-pagination'
 import RouterSelect from './router-select'
 
-const version = '1.0.1'
+const version = '1.0.2'
 const components = [
   RouterPagination,
   RouterSelect
