@@ -1,0 +1,66 @@
+.van-doc-intro{text-align:center;font-family:Dosis,Source Sans Pro,Helvetica Neue,Arial,sans-serif}.van-doc-intro__youzan{width:32px;height:32px;display:block;margin:25px 0 0}.van-doc-intro__logo{width:120px;height:120px}.van-doc-intro h2{font-size:32px;line-height:60px;font-weight:400}.van-doc-intro p{font-size:15px;color:#455a64}.side-nav{width:100%;box-sizing:border-box;padding:60px 15px 20px}.side-nav .zanui-desc,.side-nav .zanui-title{text-align:center;font-weight:400;-webkit-user-select:none;user-select:none}.side-nav .zanui-title{margin:0 0 15px}.side-nav .zanui-title img,.side-nav .zanui-title span{display:inline-block;vertical-align:middle}.side-nav .zanui-title img{width:36px}.side-nav .zanui-title span{font-size:40px;margin-left:15px;font-family:Dosis,Source Sans Pro,Helvetica Neue,Arial,sans-serif}.side-nav .zanui-desc{font-size:14px;color:#455a64;margin:0 0 60px}.mobile-switch-lang{position:absolute;top:15px;right:15px;font-size:11px;border:1px solid $blue;border-radius:3px;color:$blue;cursor:pointer}.mobile-switch-lang span{width:32px;line-height:22px;text-align:center;display:inline-block}.mobile-switch-lang span.active{color:#fff;background-color:$blue}.mobile-nav-group{border-radius:2px;margin-bottom:15px;background-color:#fff;box-shadow:0 1px 1px 0 rgba(0,0,0,.1)}.mobile-nav-group__basetitle{padding-left:20px}.mobile-nav-group__title{font-size:16px;color:#333;line-height:56px;position:relative;-webkit-user-select:none;user-select:none}.mobile-nav-group__title:active{background-color:$active-color}.mobile-nav-group__title--open{color:#999}.mobile-nav-group__title a{color:#333;display:block;-webkit-user-select:none;user-select:none;padding-left:20px;text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mobile-nav-group__title a:active{background:#ececec}.mobile-nav-group__title a>p{margin:0;border-top:1px solid #e5e5e5}.mobile-nav-group__title .el-icon-arrow-right{position:absolute;font-size:12px;line-height:1;top:24px;right:20px}.mobile-nav-group__list-wrapper{height:0;overflow:hidden}.mobile-nav-group__list-wrapper--open{height:auto}.mobile-nav-group__list{-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:-webkit-transform .2s ease-out;transition:-webkit-transform .2s ease-out;transition:transform .2s ease-out;transition:transform .2s ease-out,-webkit-transform .2s ease-out}.mobile-nav-group__list--open{-webkit-transform:translateY(0);transform:translateY(0)}.mobile-nav-group li{list-style:none}.mobile-nav-group ul{padding:0;margin:0;overflow:hidden}/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+#nprogress .bar {
+  background: rgba(52, 152, 219, .7);
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(52, 152, 219, .7), 0 0 2px rgba(52, 152, 219, .7);
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+#nprogress .spinner-icon {
+  display: none;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: rgba(52, 152, 219, .7);
+  border-left-color: rgba(52, 152, 219, .7);
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+.nprogress-custom-parent #nprogress .spinner, .nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
