@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       config: docConfig,
-      simulators: [`/examples${location.hash}`],
+      simulators: [`${location.pathname}examples${location.hash}`],
       demoURL: ''
     };
   },
