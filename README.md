@@ -1,60 +1,63 @@
-## Features
+## 特性
 
-* 50+ Reusable components
-* 90%+ Unit test coverage
-* Extensive documentation and demos
-* Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-* Support TypeScript
-* Support SSR
+* 基于 [ElementUI](https://github.com/ElemeFE/element) 的中后台通用组件
+* 完善的文档和示例
+* 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+* 支持 TypeScript
 
-## Install
+### 安装
 
 ```shell
-npm i -S klg-admin-pro
+npm i klg-admin-pro
 ```
 
-## Quickstart
+### 引入组件
 
-#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
+#### 方式一. 导入所有组件
+配置 babel-plugin-import 插件后将不允许导入所有组件的方式
 
+```js
+import Vue from 'vue';
+import KlgPro from 'klg-admin-pro';
+import 'klg-admin-pro/lib/klg-css/index.css';
+
+Vue.use(KlgPro);
+```
+
+```html
+// 导入后直接使用
+<klg-router-pagination :total="20"/>
+```
+
+#### 方式二. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
 ```bash
-# Install babel-plugin-import
+# 安装 babel-plugin-import 插件
 npm i babel-plugin-import -D
 ```
 
 ```js
-// set babel config in .babelrc or babel-loader
+// 在 .babelrc 或 babel-loader 中添加插件配置
+// 注意：webpack 1 无需设置 libraryDirectory。
 {
   "plugins": [
-    ["import", { "libraryName": "klg-admin-pro", "style": true }]
+    ["import", {
+      "libraryName": "klg-admin-pro",
+      "libraryDirectory": "es",
+      "style": true
+    }]
   ]
 }
 ```
 
-Then you can import components from klg-admin-pro, equivalent to import manually below.
+接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为方式二中的按需引入形式。
 
 ```js
-import { SelectFilter } from 'klg-admin-pro';
+import { Select } from 'klg-admin-pro';
 ```
 
-#### 2. Manually import
+#### 方式三. 按需引入组件
 
 ```js
-import SelectFilter from 'klg-admin-pro/lib/select-filter';
-import 'klg-admin-pro/lib/klg-admin-pro-css/base.css';
-import 'klg-admin-pro/lib/klg-admin-pro-css/select-filter.css';
+import Select from 'klg-admin-pro/lib/select';
+import 'klg-admin-pro/lib/klg-css/select.css';
 ```
-
-#### 3. Import all components
-
-```js
-import Vue from 'vue';
-import klgAdminPro from 'klg-admin-pro';
-import 'klg-admin-pro/lib/klg-admin-pro-css/index.css';
-
-Vue.use(klgAdminPro);
-```
-
-## Contribution
-
-Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
