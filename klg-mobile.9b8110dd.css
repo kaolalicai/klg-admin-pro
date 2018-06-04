@@ -68,8 +68,8 @@ body{color:#333;line-height:1;background-color:#f8f8f8;font-family:Arial,Helveti
  * Entry of all component's style
  */
 
-/* .klg-pagination {
+.klg-pagination {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: right;
-} */
+}
