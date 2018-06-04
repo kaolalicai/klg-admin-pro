@@ -1,5 +1,6 @@
 <template>
   <el-pagination
+    :class="className"
     :small="small"
     :disabled="disabled"
     :background="background"
@@ -20,6 +21,10 @@ import _ from 'lodash'
 export default {
   name: 'KlgRouterPagination',
   props: {
+    className: {
+      type: String,
+      default: 'klg-pagination'
+    },
     small: {
       type: Boolean,
       default: false
