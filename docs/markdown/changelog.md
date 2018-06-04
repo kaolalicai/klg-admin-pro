@@ -1,5 +1,13 @@
 ## 更新日志
 
+### [1.0.3](https://github.com/kaolalicai/klg-admin-pro/tree/v1.0.3)
+
+`2018-06-04`
+
+**Improvements**
+
+* `RouterPagination`分页器组件添加默认样式
+
 ### [1.0.2](https://github.com/kaolalicai/klg-admin-pro/tree/v1.0.2)
 
 `2018-05-15`
